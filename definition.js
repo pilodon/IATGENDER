@@ -1,4 +1,4 @@
-define(['pipAPI', 'https://raw.githubusercontent.com/pilodon/IATGENDER/master/mainIAT.js'], function(APIConstructor, iatExtension){
+define(['pipAPI', 'https://pilodon.github.io/IATGENDER/mainIAT.js'], function(APIConstructor, iatExtension){
     var API = new APIConstructor();
 
 	return iatExtension({
@@ -79,7 +79,7 @@ define(['pipAPI', 'https://raw.githubusercontent.com/pilodon/IATGENDER/master/ma
 		},
 
 		base_url : {//Where are your images at?
-			image : 'https://baranan.github.io/minno-tasks/images/'
+			image : 'https://pilodon.github.io/IATGENDER/'
 		} 
 	});
 });
