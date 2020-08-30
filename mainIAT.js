@@ -29,87 +29,83 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				borderColor: 'lightblue'
 			},
 			//When scoring, we will consider the compatible condition the pairing condition that requires response with one key to [category1,attribute1] and the other key to [category2,attribute2]
-			category1 : {
-				name : 'Black people', //Will appear in the data and in the default feedback message.
-				title : {
-					media : {word : 'Black people'}, //Name of the category presented in the task.
-					css : {color:'#336600','font-size':'1.8em'}, //Style of the category title.
-					height : 4 //Used to position the "Or" in the combined block.
-				},
-				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word: 'Tyron'},
-					{word: 'Malik'},
-					{word: 'Terrell'},
-					{word: 'Jazmin'},
-					{word: 'Tiara'},
-					{word: 'Shanice'}
-				],
-				//Stimulus css (style)
-				stimulusCss : {color:'#336600','font-size':'2.3em'}
+		category1 : {
+			name : 'Career', //Will appear in the data.
+			title : {
+				media : {word : 'Career'}, //Name of the category presented in the task.
+				css : {color:'#31940F','font-size':'1.8em'}, //Style of the category title.
+				height : 4 //Used to position the "Or" in the combined block.
+			}, 
+			stimulusMedia : [ //Stimuli content as PIP's media objects
+            {word: 'Career'},
+				{word: 'Corporation'},
+				{word: 'Salary'},
+				{word: 'Office'},
+				{word: 'Professional'},
+				{word: 'Management'},
+				{word: 'Business'}
+			], 
+			//Stimulus css (style)
+			stimulusCss : {color:'#31940F','font-size':'1.8em'}
+		},	
+		category2 :	{
+			name : 'Family', //Will appear in the data.
+			title : {
+				media : {word : 'Family'}, //Name of the category presented in the task.
+				css : {color:'#31940F','font-size':'1.8em'}, //Style of the category title.
+				height : 4 //Used to position the "Or" in the combined block.
+			}, 
+			stimulusMedia : [ //Stimuli content as PIP's media objects
+           	{word: 'Wedding'},
+				{word: 'Marriage'},
+				{word: 'Parents'},
+				{word: 'Relatives'},
+				{word: 'Family'},
+				{word: 'Home'}, 
+				{word: 'Children'}
+			], 
+			//Stimulus css
+			stimulusCss : {color:'#31940F','font-size':'1.8em'}
+		},
+		attribute1 :
+		{
+			name : 'Male',
+			title : {
+				media : {word : 'Male'},
+				css : {color:'#0000FF','font-size':'1.8em'},
+				height : 4 //Used to position the "Or" in the combined block.
 			},
-			category2 :	{
-				name : 'White people', //Will appear in the data and in the default feedback message.
-				title : {
-					media : {word : 'White people'}, //Name of the category presented in the task.
-					css : {color:'#336600','font-size':'1.8em'}, //Style of the category title.
-					height : 4 //Used to position the "Or" in the combined block.
-				},
-				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word: 'Jake'},
-					{word: 'Connor'},
-					{word: 'Bradley'},
-					{word: 'Allison'},
-					{word: 'Emma'},
-					{word: 'Emily'}
-				],
-				//Stimulus css
-				stimulusCss : {color:'#336600','font-size':'2.3em'}
+			stimulusMedia : [ //Stimuli content as PIP's media objects
+            	{word: 'Ben'},
+				{word: 'Paul'},
+				{word: 'Daniel'},
+				{word: 'John'},
+				{word: 'Jeffrey'}
+			],
+			//Stimulus css
+			stimulusCss : {color:'#0000FF','font-size':'2.3em'}
+		},
+		attribute2 :
+		{
+			name : 'Female',
+			title : {
+				media : {word : 'Female'},
+				css : {color:'#0000FF','font-size':'1.8em'},
+				height : 4 //Used to position the "Or" in the combined block.
 			},
-			attribute1 :
-			{
-				name : 'Bad words',
-				title : {
-					media : {word : 'Bad words'},
-					css : {color:'#0000FF','font-size':'1.8em'},
-					height : 4 //Used to position the "Or" in the combined block.
-				},
-				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word: 'awful'},
-					{word: 'failure'},
-					{word: 'agony'},
-					{word: 'hurt'},
-					{word: 'horrible'},
-					{word: 'terrible'},
-					{word: 'nasty'},
-					{word: 'evil'}
-				],
-				//Stimulus css
-				stimulusCss : {color:'#0000FF','font-size':'2.3em'}
-			},
-			attribute2 :
-			{
-				name : 'Good words',
-				title : {
-					media : {word : 'Good words'},
-					css : {color:'#0000FF','font-size':'1.8em'},
-					height : 4 //Used to position the "Or" in the combined block.
-				},
-				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word: 'laughter'},
-					{word: 'happy'},
-					{word: 'glorious'},
-					{word: 'joy'},
-					{word: 'wonderful'},
-					{word: 'peace'},
-					{word: 'pleasure'},
-					{word: 'love'}
-				],
-				//Stimulus css
-				stimulusCss : {color:'#0000FF','font-size':'2.3em'}
-			},
+			stimulusMedia : [ //Stimuli content as PIP's media objects
+          {word: 'Rebecca'},
+				{word: 'Michelle'},
+				{word: 'Emily'},
+				{word: 'Julia'},
+				{word: 'Anna'}
+			],
+			//Stimulus css
+			stimulusCss : {color:'#0000FF','font-size':'2.3em'}
+		},
 
 			base_url : {//Where are your images at?
-				image : '/implicit/user/yba/pipexample/biat/images/'
+				image : 'https://pilodon.github.io/IATGENDER/'
 			},
 
 			//nBlocks : 7, This is not-supported anymore. If you want a 5-block IAT, change blockSecondCombined_nTrials to 0.
